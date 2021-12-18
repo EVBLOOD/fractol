@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 10:58:16 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 11:46:51 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 17:24:18 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,11 @@ void	ft_navigation(int keycode, t_varstock *rec, double percx, double percy)
 		rec->go->y_max -= percy;
 		rec->go->y_min -= percy;
 	}
+}
+
+double	ft_colorate(double c, double cmp, t_varstock *stock)
+{
+	if (c != cmp)
+		return (stock->color + (c * 1248518));
+	return (0);
 }

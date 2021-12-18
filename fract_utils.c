@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:30:59 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 11:10:13 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 17:24:57 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	ft_stockini(t_varstock *stock)
 	wnd = malloc(sizeof(t_dimensions));
 	r = malloc(sizeof(t_equation));
 	yo = malloc(sizeof(t_zoomcrd));
-	wnd->x = 1000;
-	wnd->y = 1000;
+	wnd->x = 500;
+	wnd->y = 500;
 	dmn->x = 4.0;
 	dmn->y = 4.0;
 	yo->x_max = 2;
@@ -72,4 +72,5 @@ void	ft_stockini(t_varstock *stock)
 	stock->wnd = wnd;
 	stock->dmn = dmn;
 	stock->go = yo;
+	stock->color = 0xED8375;
 }

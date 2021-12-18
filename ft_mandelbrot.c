@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 06:01:36 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 12:27:51 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 17:27:43 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	*ft_mandelbrot(t_varstock *stock)
 	t_dimensions	x_y;
 	int				*buffer;
 
+	mlx_clear_window(stock->init_ret, stock->win_ret);
 	buffer = ft_new_image(stock);
 	x_y.y = 0.0;
 	while (x_y.y < stock->wnd->y)
@@ -31,7 +32,7 @@ void	*ft_mandelbrot(t_varstock *stock)
 				if (ft_drowing(stock))
 					break ;
 			buffer[(int)(x_y.y * stock->wnd->x + x_y.x)]
-				= stock->color + (stock->iteration - count) * 15 * 200;
+				= ft_colorate(count, stock->iteration, stock);
 			x_y.x++;
 		}
 		x_y.y++;
@@ -99,7 +100,6 @@ void	callmandel(void)
 	stock.init_ret = mlx_init();
 	ft_stockini(&stock);
 	stock.iteration = 50;
-	stock.color = 0x00FF4500;
 	stock.win_ret = mlx_new_window(stock.init_ret, stock.wnd->y,
 			stock.wnd->x, "Mandelbrot set");
 	stock.image = mlx_new_image(stock.init_ret, stock.wnd->y, stock.wnd->x);

@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 12:17:55 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 12:43:35 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 15:52:35 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	{
 		printf("please chose first each fractal you want to see.\n");
 		printf("		we have here:\n");
-		printf("-Mandelbrot\n");
+		printf("\e[1;34m-Mandelbrot\e[0m\n");
 		printf("-Julia\n");
 	}
 	else

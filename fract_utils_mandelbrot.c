@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 11:51:51 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 12:17:19 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 17:50:24 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,20 @@ int	ft_mandelkeybord(int keycode, t_varstock *rec)
 
 	if (keycode == 53)
 		ft_exit(rec);
-	percx = (rec->go->x_max - rec->go->x_min) / 4;
-	percy = (rec->go->y_max - rec->go->y_min) / 4;
-	ft_mandelnavigation(keycode, rec, percx, percy);
+	if (keycode == 69)
+	{
+		rec->color = rec->color >> 1;
+	}
+	else if (keycode == 78)
+	{
+		rec->color = rec->color << 1;
+	}
+	else
+	{
+		percx = (rec->go->x_max - rec->go->x_min) / 4;
+		percy = (rec->go->y_max - rec->go->y_min) / 4;
+		ft_mandelnavigation(keycode, rec, percx, percy);
+	}
 	ft_mandelbrot(rec);
 	mlx_put_image_to_window(rec->init_ret, rec->win_ret, rec->image, 0, 0);
 	return (0);
