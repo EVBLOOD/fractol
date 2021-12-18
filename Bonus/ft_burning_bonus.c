@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 06:01:36 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 21:07:05 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 23:03:56 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ int	key_hook(int keycode, int x, int y, t_varstock *rec)
 void	callburning(void)
 {
 	t_varstock	stock;
-	void		*new_image_ret;
 
 	stock.init_ret = mlx_init();
 	ft_stockini(&stock);

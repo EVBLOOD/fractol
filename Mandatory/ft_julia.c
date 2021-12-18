@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:20:37 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 19:40:56 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 23:03:28 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ int	ft_keybord(int keycode, t_varstock *rec)
 void	calljulia(void)
 {
 	t_varstock	stock;
-	void		*new_image_ret;
 
 	stock.init_ret = mlx_init();
 	ft_stockini(&stock);
