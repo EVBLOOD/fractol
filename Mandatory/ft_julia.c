@@ -6,7 +6,7 @@
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:20:37 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 17:46:14 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 19:40:56 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ int	ft_keybord(int keycode, t_varstock *rec)
 	}
 	else
 	{
-		percx = (rec->go->x_max - rec->go->x_min) / 4;
-		percy = (rec->go->y_max - rec->go->y_min) / 4;
+		percx = 0.01;
+		percy = 0.01;
 		ft_navigation(keycode, rec, percx, percy);
 	}
 	ft_julia(rec, rec->juliax, rec->juliay);

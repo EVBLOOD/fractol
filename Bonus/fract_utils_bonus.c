@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fract_utils_mandelbrot.c                           :+:      :+:    :+:   */
+/*   fract_utils_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sakllam <sakllam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 11:51:51 by sakllam           #+#    #+#             */
-/*   Updated: 2021/12/18 17:50:24 by sakllam          ###   ########.fr       */
+/*   Updated: 2021/12/18 19:39:34 by sakllam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract.h"
+#include "fract_bonus.h"
 
-void	ft_mnadelzoomin(t_varstock *rec, int x, int y)
+void	ft_burningzoomin(t_varstock *rec, int x, int y)
 {
 	rec->juliay = y * (rec->go->y_max - rec->go->y_min)
 		/ (rec->wnd->y) + rec->go->y_min;
@@ -22,7 +22,7 @@ void	ft_mnadelzoomin(t_varstock *rec, int x, int y)
 	apply_zoom(rec->go, rec->juliax, rec->juliay, 0.9);
 }
 
-int	ft_mandelkeybord(int keycode, t_varstock *rec)
+int	ft_burningkeybord(int keycode, t_varstock *rec)
 {
 	double	percx;
 	double	percy;
@@ -39,16 +39,16 @@ int	ft_mandelkeybord(int keycode, t_varstock *rec)
 	}
 	else
 	{
-		percx = (rec->go->x_max - rec->go->x_min) / 4;
-		percy = (rec->go->y_max - rec->go->y_min) / 4;
-		ft_mandelnavigation(keycode, rec, percx, percy);
+		percx = 0.01;
+		percy = 0.01;
+		ft_burningnavigation(keycode, rec, percx, percy);
 	}
-	ft_mandelbrot(rec);
+	ft_burning(rec);
 	mlx_put_image_to_window(rec->init_ret, rec->win_ret, rec->image, 0, 0);
 	return (0);
 }
 
-void	ft_mandelnavigation(int keycode, t_varstock *rec
+void	ft_burningnavigation(int keycode, t_varstock *rec
 		, double percx, double percy)
 {
 	if (keycode == 123)
@@ -71,4 +71,11 @@ void	ft_mandelnavigation(int keycode, t_varstock *rec
 		rec->go->y_max -= percy;
 		rec->go->y_min -= percy;
 	}
+}
+
+double	ft_colorate(double c, double cmp, t_varstock *stock)
+{
+	if (c != cmp)
+		return (stock->color + (c * 1248518));
+	return (0);
 }
